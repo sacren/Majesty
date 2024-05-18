@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 class Job extends Model
 {
@@ -28,5 +29,10 @@ class Job extends Model
     public static function get(): array
     {
         return self::$jobs;
+    }
+
+    public static function find($id): array
+    {
+        return Arr::first(self::get(), fn($job) => $job['id'] == $id);
     }
 }
