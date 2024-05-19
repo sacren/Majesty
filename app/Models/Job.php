@@ -33,6 +33,12 @@ class Job extends Model
 
     public static function find($id): array
     {
-        return Arr::first(self::get(), fn($job) => $job['id'] == $id);
+        $job = Arr::first(self::get(), fn($job) => $job['id'] == $id);
+
+        if (!$job) {
+            abort(404);
+        }
+
+        return $job;
     }
 }
