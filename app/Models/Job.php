@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Collection;
 class Job extends Model
 {
     protected $table = 'job_listings';
+    protected $fillable = ['title', 'salary'];
 
     public static function get(): Collection
     {
