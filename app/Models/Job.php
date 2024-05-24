@@ -4,17 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Collection;
 
 class Job extends Model
 {
     protected $table = 'job_listings';
     protected $fillable = ['title', 'salary'];
-
-    public static function get(): Collection
-    {
-        return self::all();
-    }
 
     public static function found($id): self
     {
