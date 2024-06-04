@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class Job extends Model
 {
@@ -21,5 +22,15 @@ class Job extends Model
         }
 
         return $job;
+    }
+
+    /**
+     * Build a relationship from Job to Employer.
+     *
+     * @return Relation.
+     */
+    public function employer(): Relation
+    {
+        return $this->belongsTo(Employer::class);
     }
 }
