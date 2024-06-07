@@ -10,6 +10,11 @@ class Comment extends Model
 {
     use HasFactory;
 
+    /**
+     * Build a many-to-one relationship from Comment to Post.
+     *
+     * @return Relation.
+     */
     public function post(): Relation
     {
         return $this->belongsTo(Post::class);

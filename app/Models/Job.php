@@ -13,6 +13,11 @@ class Job extends Model
     protected $table = 'job_listings';
     protected $fillable = ['title', 'salary'];
 
+    /**
+     * Wrapper of find() method, but return 404 if job doesn't exist.
+     *
+     * @return job of id.
+     */
     public static function found($id): self
     {
         $job = self::find($id);
