@@ -46,6 +46,11 @@ class User extends Authenticatable
         ];
     }
 
+    /**
+     * Build a one-to-many relationship from User to Post.
+     *
+     * @return Relation.
+     */
     public function posts(): Relation
     {
         return $this->hasMany(Post::class);
