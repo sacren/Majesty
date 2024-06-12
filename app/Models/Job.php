@@ -38,4 +38,14 @@ class Job extends Model
     {
         return $this->belongsTo(Employer::class);
     }
+
+    /**
+     * Build many-to-many relationship from Job to Tag.
+     *
+     * @return Relation.
+     */
+    public function tags(): Relation
+    {
+        return $this->belongsToMany(Tag::class, foreignPivotKey: 'job_listing_id');
+    }
 }
