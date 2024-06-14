@@ -10,6 +10,8 @@ class Tag extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     /**
      * Build many-to-many relationship from Tag to Job.
      *
