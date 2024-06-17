@@ -29,4 +29,12 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * Build a many-to-many relationship from Post to rag.
+     */
+    public function tags(): Relation
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
