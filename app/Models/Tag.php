@@ -21,4 +21,14 @@ class Tag extends Model
     {
         return $this->belongsToMany(Job::class, relatedPivotKey: 'job_listing_id');
     }
+
+    /**
+     * Build many-to-many relationship from Tag to Post.
+     *
+     * @return Relation.
+     */
+    public function posts(): Relation
+    {
+        return $this->belongsToMany(Post::class);
+    }
 }
