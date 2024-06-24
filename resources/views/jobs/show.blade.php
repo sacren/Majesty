@@ -1,4 +1,7 @@
 <x-layout>
+  <x-slot:title>
+    Job Page
+  </x-slot:title>
   <x-slot:heading>
     Job
   </x-slot:heading>
