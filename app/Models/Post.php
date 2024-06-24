@@ -31,7 +31,9 @@ class Post extends Model
     }
 
     /**
-     * Build a many-to-many relationship from Post to rag.
+     * Build a many-to-many relationship from Post to Tag.
+     *
+     * @return Relation.
      */
     public function tags(): Relation
     {
