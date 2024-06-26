@@ -15,6 +15,10 @@ Route::get('/jobs', function () {
     ]);
 });
 
+Route::post('/jobs', function () {
+    dd(request()->all());
+});
+
 Route::get('/jobs/create', function () {
     return view('jobs.create');
 });
