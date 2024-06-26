@@ -16,7 +16,13 @@ Route::get('/jobs', function () {
 });
 
 Route::post('/jobs', function () {
-    dd(request()->all());
+    Job::factory()->create([
+        'title' => request('title'),
+        'salary' => request('salary'),
+        'employer_id' => 1,
+    ]);
+
+    return redirect('/jobs');
 });
 
 Route::get('/jobs/create', function () {
