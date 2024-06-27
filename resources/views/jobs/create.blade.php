@@ -20,9 +20,9 @@
                 <input type="text" name="title" id="title" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Petroleum Technician">
               </div>
               <div class="mt-2">
-                @if($errors->has('title'))
-                <p class="text-xs text-red-500 font-bold">{{ $errors->first('title') }}</p>
-                @endif
+                @error('title')
+                <p class="text-xs text-red-500 font-bold">{{ $message }}</p>
+                @enderror
               </div>
             </div>
           </div>
@@ -34,9 +34,9 @@
                 <input type="text" name="salary" id="salary" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="$187,000.00">
               </div>
               <div class="mt-2">
-                @if($errors->has('salary'))
-                <p class="text-xs text-red-500 font-bold">{{ $errors->first('salary') }}</p>
-                @endif
+                @error('salary')
+                <p class="text-xs text-red-500 font-bold">{{ $message }}</p>
+                @enderror
               </div>
             </div>
           </div>
