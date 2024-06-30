@@ -51,6 +51,21 @@ Route::get('/jobs/{id}/edit', function ($id) {
     ]);
 });
 
+// Update
+Route::patch('/jobs/{id}', function ($id) {
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required'],
+    ]);
+
+    Job::found($id)->update([
+        'title' => request('title'),
+        'salary' => request('salary'),
+    ]);
+
+    return redirect('/jobs/' . $id);
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
