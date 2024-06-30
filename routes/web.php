@@ -19,8 +19,18 @@ Route::get('/jobs', function () {
 // Store
 Route::post('/jobs', function () {
     request()->validate([
-        'title' => ['required', 'min:3'],
-        'salary' => ['required'],
+        'title' => [
+            'required',
+            'string',
+            'unique:job_listings,title',
+            'max:255',
+            'min:3',
+        ],
+        'salary' => [
+            'required',
+            'string',
+            'max:255',
+        ],
     ]);
 
     Job::factory()->create([
@@ -54,8 +64,18 @@ Route::get('/jobs/{id}/edit', function ($id) {
 // Update
 Route::patch('/jobs/{id}', function ($id) {
     request()->validate([
-        'title' => ['required', 'min:3'],
-        'salary' => ['required'],
+        'title' => [
+            'required',
+            'string',
+            'unique:job_listings,title',
+            'max:255',
+            'min:3'
+        ],
+        'salary' => [
+            'required',
+            'string',
+            'max:255',
+        ],
     ]);
 
     Job::found($id)->update([
