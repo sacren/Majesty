@@ -10,6 +10,6 @@
   Pays {{ $job->salary }} per year.
   </p>
   <div class="mt-5">
-    <x-button href="#">Edit Job</x-button>
+    <x-button href="/jobs/{{ $job->id }}/edit">Edit Job</x-button>
   </div>
 </x-layout>
