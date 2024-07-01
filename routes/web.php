@@ -88,7 +88,7 @@ Route::patch('/jobs/{id}', function ($id) {
 
 // Destroy
 Route::delete('/jobs/{id}', function ($id) {
-    Job::found($id)->delete();
+    Job::destroy($id);
     return redirect('/jobs');
 });
 
