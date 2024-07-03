@@ -6,7 +6,7 @@ use App\Http\Controllers\JobController;
 Route::view('/', 'home');
 
 Route::resource('jobs', JobController::class,
-    ['only' => ['index']]
+    ['except' => ['edit', 'update']]
 );
 
 Route::view('/contact', 'contact');
