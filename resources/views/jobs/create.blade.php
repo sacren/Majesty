@@ -16,24 +16,16 @@
           <div class="sm:col-span-4">
             <x-form-label for="title">Title</x-form-label>
             <div class="mt-2">
-              <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input type="text" name="title" id="title" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Petroleum Technician" required>
-              </div>
-              <div class="mt-2">
-                <x-form-error id="title"></x-form-error>
-              </div>
+              <x-form-input name="title" id="title" placeholder="Petroleum Technician" required></x-form-input>
+              <x-form-error id="title"></x-form-error>
             </div>
           </div>
 
           <div class="sm:col-span-4">
             <x-form-label for="salary">Salary</x-form-label>
             <div class="mt-2">
-              <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input type="text" name="salary" id="salary" class="block flex-1 border-0 bg-transparent py-1.5 px-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="$187,000.00" required>
-              </div>
-              <div class="mt-2">
-                <x-form-error id="salary"></x-form-error>
-              </div>
+              <x-form-input name="salary" id="salary" placeholder="$187,000.00" required></x-form-input>
+              <x-form-error id="salary"></x-form-error>
             </div>
           </div>
 
