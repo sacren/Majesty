@@ -16,16 +16,16 @@
           <x-form-field>
             <x-form-label for="title">Title</x-form-label>
             <div class="mt-2">
-              <x-form-input name="title" id="title" placeholder="Petroleum Technician" required></x-form-input>
-              <x-form-error id="title"></x-form-error>
+              <x-form-input name="title" id="title" placeholder="Petroleum Technician" required />
+              <x-form-error id="title" />
             </div>
           </x-form-field>
 
           <x-form-field>
             <x-form-label for="salary">Salary</x-form-label>
             <div class="mt-2">
-              <x-form-input name="salary" id="salary" placeholder="$187,000.00" required></x-form-input>
-              <x-form-error id="salary"></x-form-error>
+              <x-form-input name="salary" id="salary" placeholder="$187,000.00" required />
+              <x-form-error id="salary" />
             </div>
           </x-form-field>
         </div>
