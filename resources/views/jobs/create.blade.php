@@ -13,23 +13,23 @@
         <p class="mt-1 text-sm leading-6 text-gray-600">Please fill out required info.</p>
 
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-          <div class="sm:col-span-4">
+          <x-form-field>
             <x-form-label for="title">Title</x-form-label>
             <div class="mt-2">
               <x-form-input name="title" id="title" placeholder="Petroleum Technician" required></x-form-input>
               <x-form-error id="title"></x-form-error>
             </div>
-          </div>
+          </x-form-field>
 
-          <div class="sm:col-span-4">
+          <x-form-field>
             <x-form-label for="salary">Salary</x-form-label>
             <div class="mt-2">
               <x-form-input name="salary" id="salary" placeholder="$187,000.00" required></x-form-input>
               <x-form-error id="salary"></x-form-error>
             </div>
-          </div>
-
+          </x-form-field>
         </div>
+
       </div>
     </div>
 
