@@ -36,9 +36,8 @@
               <div class="ml-4 flex items-center md:ml-6">
                 <!-- Profile dropdown -->
                 <div class="relative ml-3">
-                  <div>
-                    <x-navlink href="/register">Register</x-navlink>
-                  </div>
+                  <x-navlink href="/login">Login</x-navlink>
+                  <x-navlink href="/register">Register</x-navlink>
                 </div>
               </div>
             </div>
@@ -69,10 +68,7 @@
           </div>
           <div class="border-t border-gray-700 pb-3 pt-4">
             <div class="flex items-center px-5">
-              <div class="flex-shrink-0">
-              </div>
-              <div class="ml-3">
-              </div>
+              <x-navlink href="/login">Login</x-navlink>
               <x-navlink href="/register">Register</x-navlink>
             </div>
           </div>
