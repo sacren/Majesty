@@ -11,3 +11,4 @@ Route::resource('jobs', JobController::class);
 
 // Authentication Routes...
 Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
