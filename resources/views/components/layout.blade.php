@@ -36,8 +36,17 @@
               <div class="ml-4 flex items-center md:ml-6">
                 <!-- Profile dropdown -->
                 <div class="relative ml-3">
+                  @guest
                   <x-navlink href="/login">Login</x-navlink>
                   <x-navlink href="/register">Register</x-navlink>
+                  @endguest
+
+                  @auth
+                  <form method="POST" action="/logout">
+                    @csrf
+                    <x-form-button href="/logout">Log Out</x-form-button>
+                  </form>
+                  @endauth
                 </div>
               </div>
             </div>
@@ -68,8 +77,16 @@
           </div>
           <div class="border-t border-gray-700 pb-3 pt-4">
             <div class="flex items-center px-5">
+              @guest
               <x-navlink href="/login">Login</x-navlink>
               <x-navlink href="/register">Register</x-navlink>
+              @endguest
+              @auth
+              <form method="POST" action="/logout">
+                @csrf
+                <x-form-button href="/logout">Log Out</x-form-button>
+              </form>
+              @endauth
             </div>
           </div>
         </div>
