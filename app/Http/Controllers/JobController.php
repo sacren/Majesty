@@ -75,6 +75,10 @@ class JobController extends Controller
             return redirect('/login');
         }
 
+        if ($job->employer->user->isNot(Auth::user())) {
+            abort(403);
+        }
+
         return view('jobs.edit', [
             'job' => $job,
         ]);
