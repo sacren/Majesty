@@ -19,4 +19,14 @@ class Employer extends Model
     {
         return $this->HasMany(Job::class);
     }
+
+    /**
+     * Build a many-to-one relationship from Employer to User.
+     *
+     * @return Relation
+     */
+    public function user(): Relation
+    {
+        return $this->belongsTo(User::class);
+    }
 }
