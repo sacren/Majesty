@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Employer extends Model
 {
@@ -21,11 +22,11 @@ class Employer extends Model
     }
 
     /**
-     * Build a many-to-one relationship from Employer to User.
+     * Build Employer BelongsTo User relationship.
      *
-     * @return Relation
+     * @return BelongsTo.
      */
-    public function user(): Relation
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
