@@ -8,11 +8,17 @@ use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
+    /**
+     * Show the form for creating a new user.
+     */
     public function create()
     {
         return view('auth.login');
     }
 
+    /**
+     * Store a newly created user in storage.
+     */
     public function store()
     {
         $attributes = Request::validate([
@@ -28,12 +34,15 @@ class SessionController extends Controller
 
         Request::session()->regenerate();
 
-        return redirect('/')->with('success', 'You are now logged in!');
+        return redirect('/');
     }
 
+    /**
+     * Destroy an authenticated session.
+     */
     public function destroy()
     {
         Auth::logout();
-        return redirect('/')->with('success', 'You have been logged out!');
+        return redirect('/');
     }
 }

@@ -8,11 +8,17 @@ use Illuminate\Support\Facades\Request;
 
 class RegisteredUserController extends Controller
 {
+    /**
+     * Show the form for creating a new user.
+     */
     public function create()
     {
         return view('auth.register');
     }
 
+    /**
+     * Store a new user in storage.
+     */
     public function store()
     {
         $attributes = Request::validate([
@@ -26,6 +32,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('/')->with('success', 'Your account has been created!');
+        return redirect('/');
     }
 }
