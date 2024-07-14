@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
@@ -11,7 +12,10 @@ Route::view('/contact', 'contact');
 
 // Mail Routes...
 Route::get('/posted', function () {
-    return new JobPosted();
+    Mail::to('bWqgK@example.com')->send(
+        new JobPosted()
+    );
+    return 'Mail sent!';
 });
 
 // Jobs Routes...
