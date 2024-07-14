@@ -4,9 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Mail\JobPosted;
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
+
+// Mail Routes...
+Route::get('/posted', function () {
+    return new JobPosted();
+});
 
 // Jobs Routes...
 Route::get('/jobs', [JobController::class, 'index']);
