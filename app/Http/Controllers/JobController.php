@@ -48,13 +48,13 @@ class JobController extends Controller
             ],
         ]);
 
-        Job::factory()->create([
+        $job = Job::factory()->create([
             'title' => request('title'),
             'salary' => request('salary'),
             'employer_id' => 1,
         ]);
 
-        Mail::to('bWqgK@example.com')
+        Mail::to($job->employer->user)
             ->send(new JobPosted());
 
         return redirect('/jobs');
