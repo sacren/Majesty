@@ -16,7 +16,7 @@ class JobPosted extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public Job $job)
+    public function __construct(protected Job $job)
     {
         //
     }
@@ -38,6 +38,9 @@ class JobPosted extends Mailable
     {
         return new Content(
             view: 'mail.job-posted',
+            with: [
+                'job' => $this->job,
+            ],
         );
     }
 
