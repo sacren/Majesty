@@ -55,7 +55,7 @@ class JobController extends Controller
         ]);
 
         Mail::to($job->employer->user)
-            ->send(new JobPosted());
+            ->send(new JobPosted($job));
 
         return redirect('/jobs');
     }
