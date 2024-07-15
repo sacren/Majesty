@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\JobPosted;
 use App\Models\Job;
+use Illuminate\Support\Facades\Mail;
 
 class JobController extends Controller
 {
@@ -51,6 +53,9 @@ class JobController extends Controller
             'salary' => request('salary'),
             'employer_id' => 1,
         ]);
+
+        Mail::to('bWqgK@example.com')
+            ->send(new JobPosted());
 
         return redirect('/jobs');
     }
