@@ -4,19 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Employer extends Model
 {
     use HasFactory;
 
     /**
-     * Build a relationship from Employer to Job.
+     * Build Employer HasMany Jobs relationship.
      *
-     * @return Relation.
+     * @return HasMany.
      */
-    public function jobs(): Relation
+    public function jobs(): HasMany
     {
         return $this->HasMany(Job::class);
     }

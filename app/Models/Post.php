@@ -4,38 +4,40 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Post extends Model
 {
     use HasFactory;
 
     /**
-     * Build a one-to-many relationship from Post to Comment.
+     * Build Post hasMany relationship to Comment.
      *
-     * @return Relation.
+     * @return HasMany.
      */
-    public function comments(): Relation
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class);
     }
 
     /**
-     * Build a many-to-one relationship from Post to User.
+     * Build Post BelongsTo relationship to User.
      *
-     * @return Relation.
+     * @return BelongsTo.
      */
-    public function user(): Relation
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
     /**
-     * Build a many-to-many relationship from Post to Tag.
+     * Build Post BelongsToMany relationship to Tag.
      *
-     * @return Relation.
+     * @return BelongsToMany.
      */
-    public function tags(): Relation
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }

@@ -4,18 +4,18 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Comment extends Model
 {
     use HasFactory;
 
     /**
-     * Build a many-to-one relationship from Comment to Post.
+     * Build Comment belongsTo relationship to Post.
      *
-     * @return Relation.
+     * @return BelongsTo.
      */
-    public function post(): Relation
+    public function post(): BelongsTo
     {
         return $this->belongsTo(Post::class);
     }
