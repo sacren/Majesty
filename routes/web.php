@@ -6,15 +6,18 @@ use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Mail\JobPosted;
+use App\Models\Job;
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
 // Mail Routes...
 Route::get('/posted', function () {
-    Mail::to('bWqgK@example.com')->send(
-        new JobPosted()
-    );
+    $job = Job::with('employer')->latest()->first();
+
+    Mail::to('bWqgK@example.com')
+        ->send(new JobPosted($job));
+
     return 'Mail sent!';
 });
 
