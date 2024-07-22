@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Jobs\TranslateJob;
 use App\Mail\JobPosted;
 use App\Models\Job;
 
@@ -12,10 +13,7 @@ Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
 Route::get('dispatched', function () {
-    dispatch(function () {
-        logger('This is from queue!');
-    })->delay(5);
-
+    TranslateJob::dispatch();
     return 'Sent!';
 });
 
