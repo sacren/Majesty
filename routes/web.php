@@ -14,7 +14,7 @@ Route::view('/contact', 'contact');
 Route::get('dispatched', function () {
     dispatch(function () {
         logger('This is from queue!');
-    });
+    })->delay(5);
 
     return 'Sent!';
 });
