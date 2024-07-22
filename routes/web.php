@@ -13,7 +13,8 @@ Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
 Route::get('dispatched', function () {
-    TranslateJob::dispatch();
+    $job = Job::with('employer')->latest()->first();
+    TranslateJob::dispatch($job);
     return 'Sent!';
 });
 

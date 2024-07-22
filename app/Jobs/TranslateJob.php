@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Job;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -15,7 +16,7 @@ class TranslateJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
+    public function __construct(protected Job $position)
     {
         //
     }
@@ -25,6 +26,6 @@ class TranslateJob implements ShouldQueue
      */
     public function handle(): void
     {
-        logger()->info('TranslateJob is working!');
+        logger()->info('Translating ' . $this->position->title . ' into Latin.');
     }
 }
