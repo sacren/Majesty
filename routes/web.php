@@ -11,6 +11,14 @@ use App\Models\Job;
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 
+Route::get('dispatched', function () {
+    dispatch(function () {
+        logger('This is from queue!');
+    });
+
+    return 'Sent!';
+});
+
 // Mail Routes...
 Route::get('/posted', function () {
     $job = Job::with('employer')->latest()->first();
