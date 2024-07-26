@@ -11,6 +11,9 @@ use App\Models\Job;
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
+Route::get('/welcome', function () {
+    return inertia('welcome');
+});
 
 Route::get('dispatched', function () {
     $job = Job::with('employer')->latest()->first();
