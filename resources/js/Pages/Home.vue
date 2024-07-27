@@ -4,15 +4,18 @@
   </div>
   <nav>
     <ul>
-      <li><a href="/spa">Home</a></li>
-      <li><a href="/spa/users">Users</a></li>
-      <li><a href="/spa/settings">Settings</a></li>
+      <li><Link href="/spa">Home</Link></li>
+      <li><Link href="/spa/users">Users</Link></li>
+      <li><Link href="/spa/settings">Settings</Link></li>
     </ul>
   </nav>
 </template>
 
 <script>
+  import { Link } from '@inertiajs/inertia-vue3';
+
   export default {
+    components: { Link },
     props: { },
   };
 </script>
