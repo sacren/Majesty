@@ -12,14 +12,13 @@ use Inertia\Inertia;
 
 // Routes for SPA
 Route::get('/spa', function () {
-    return Inertia::render('home', [
-        'name' => 'World',
-        'sizes' => [
-            'Small',
-            'Medium',
-            'Large',
-        ],
-    ]);
+    return Inertia::render('Home');
+});
+Route::get('/spa/users', function () {
+    return Inertia::render('Users');
+});
+Route::get('/spa/settings', function () {
+    return Inertia::render('Settings');
 });
 
 Route::view('/', 'home');
