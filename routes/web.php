@@ -14,6 +14,11 @@ use Inertia\Inertia;
 Route::get('/spa', function () {
     return Inertia::render('home', [
         'name' => 'World',
+        'sizes' => [
+            'Small',
+            'Medium',
+            'Large',
+        ],
     ]);
 });
 
