@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+// Routes for SPA
+Route::get('/spa', function () {
+    return Inertia::render('home', [
+        'name' => 'World',
+    ]);
+});
+
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
 Route::get('/welcome', function () {
