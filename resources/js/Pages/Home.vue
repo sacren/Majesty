@@ -2,20 +2,16 @@
   <div>
     <h1>Home</h1>
   </div>
-  <nav>
-    <ul>
-      <li><Link href="/spa">Home</Link></li>
-      <li><Link href="/spa/users">Users</Link></li>
-      <li><Link href="/spa/settings">Settings</Link></li>
-    </ul>
-  </nav>
+
+  <Nav />
 </template>
 
 <script>
-  import { Link } from '@inertiajs/inertia-vue3';
+  import Nav from '../Shared/Nav.vue';
 
   export default {
-    components: { Link },
-    props: { },
+    components: {
+      Nav,
+    },
   };
 </script>
