@@ -1,9 +1,9 @@
 <template>
-  <nav>
-    <ul>
-      <li><Link href="/spa">Home</Link></li>
-      <li><Link href="/spa/users">Users</Link></li>
-      <li><Link href="/spa/settings">Settings</Link></li>
+  <nav class="p-4">
+    <ul class="list-disc">
+      <li><Link href="/spa" class="text-blue-500 hover:underline">Home</Link></li>
+      <li><Link href="/spa/users" class="text-blue-500 hover:underline">Users</Link></li>
+      <li><Link href="/spa/settings" class="text-blue-500 hover:underline">Settings</Link></li>
     </ul>
   </nav>
 </template>
