@@ -4,6 +4,9 @@
   </div>
 
   <Nav />
+    <div>
+      <p>The current time is {{ time }}</p>
+    </div>
 </template>
 
 <script>
@@ -12,6 +15,9 @@
   export default {
     components: {
       Nav,
+    },
+    props: {
+      time: String,
     },
   };
 </script>
