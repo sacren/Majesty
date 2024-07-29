@@ -15,6 +15,7 @@ Route::get('/spa', function () {
     return Inertia::render('Home');
 });
 Route::get('/spa/users', function () {
+    sleep(2);
     return Inertia::render('Users');
 });
 Route::get('/spa/settings', function () {
