@@ -28,6 +28,9 @@ Route::get('/spa/users', function () {
 Route::get('/spa/settings', function () {
     return Inertia::render('Settings');
 });
+Route::post('/spa/logout', function () {
+    dd('You have been logged out');
+});
 
 Route::view('/', 'home');
 Route::view('/contact', 'contact');
