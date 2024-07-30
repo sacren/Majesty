@@ -29,7 +29,7 @@ Route::get('/spa/settings', function () {
     return Inertia::render('Settings');
 });
 Route::post('/spa/logout', function () {
-    dd('You have been logged out');
+    dd(request('sizes'));
 });
 
 Route::view('/', 'home');
