@@ -23,17 +23,6 @@
         Settings
         </Link>
       </li>
-
-      <li>
-        <Link href="/spa/logout"
-              method="post"
-              as="button"
-              :data="{ sizes: ['Small', 'Medium', 'Large']}"
-              class="text-blue-500 hover:underline"
-              :class="{ 'font-bold underline': $page.url === '/spa/logout' }">
-        Log Out
-        </Link>
-      </li>
     </ul>
   </nav>
 </template>
