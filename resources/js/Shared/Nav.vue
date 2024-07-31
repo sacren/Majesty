@@ -2,37 +2,26 @@
   <nav class="p-4">
     <ul class="list-disc">
       <li>
-        <Link href="/spa"
-              class="text-blue-500 hover:underline"
-              :class="{ 'font-bold underline': $page.component === 'Home' }">
-        Home
-        </Link>
-      </li>
-
-      <li><Link href="/spa/users"
-                class="text-blue-500 hover:underline"
-                :class="{ 'font-bold underline': $page.component === 'Users' }">
-        Users
-        </Link>
+        <NavLink href="/spa" :active="$page.component === 'Home'">Home</NavLink>
       </li>
 
       <li>
-        <Link href="/spa/settings"
-              class="text-blue-500 hover:underline"
-              :class="{ 'font-bold underline': $page.component === 'Settings' }">
-        Settings
-        </Link>
+        <NavLink href="/spa/users" :active="$page.component === 'Users'">Users</NavLink>
+      </li>
+
+      <li>
+        <NavLink href="/spa/settings" :active="$page.component === 'Settings'">Settings</NavLink>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-  import { Link } from '@inertiajs/inertia-vue3';
+  import NavLink from './NavLink.vue';
 
   export default {
     components: {
-      Link,
+      NavLink,
     },
   };
 </script>
