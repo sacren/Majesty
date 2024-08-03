@@ -1,6 +1,6 @@
 <template>
   <Layout>
-  <div class="text-4xl font-bold">
+  <div class="text-3xl">
     <h1>Home</h1>
   </div>
 
