@@ -5,7 +5,7 @@
   </div>
 
   <div>
-    <p>The current time is {{ $page.props.time }}</p>
+    <p>The current time is {{ $page.props.clock[0] }}</p>
 
     <Link href="/spa" class="text-blue-500 hover:underline">
     Update Time

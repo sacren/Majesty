@@ -6,20 +6,13 @@ use App\Http\Controllers\SessionController;
 use App\Jobs\TranslateJob;
 use App\Mail\JobPosted;
 use App\Models\Job;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 // Routes for SPA
 Route::get('/spa', function () {
-    $currentTime = Carbon::now()
-        ->setTimezone('America/Denver')
-        ->toTimeString();
-
-    return Inertia::render('Home', [
-        'time' => $currentTime,
-    ]);
+    return Inertia::render('Home');
 });
 Route::get('/spa/users', function () {
     return Inertia::render('Users');
