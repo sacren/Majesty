@@ -41,7 +41,7 @@ class HandleInertiaRequests extends Middleware
             ->toTimeString();
 
         return array_merge(parent::share($request), [
-            'clock' => [
+            'time' => [
                 $currentTime,
             ],
         ]);
