@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Tag extends Model
 {
@@ -15,9 +15,9 @@ class Tag extends Model
     /**
      * Build many-to-many relationship from Tag to Job.
      *
-     * @return Relation.
+     * @return BelongsToMany.
      */
-    public function jobs(): Relation
+    public function jobs(): BelongsToMany
     {
         return $this->belongsToMany(Job::class, relatedPivotKey: 'job_listing_id');
     }
@@ -25,9 +25,9 @@ class Tag extends Model
     /**
      * Build many-to-many relationship from Tag to Post.
      *
-     * @return Relation.
+     * @return BelongsToMany.
      */
-    public function posts(): Relation
+    public function posts(): BelongsToMany
     {
         return $this->belongsToMany(Post::class);
     }

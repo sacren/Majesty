@@ -4,7 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -50,9 +50,9 @@ class User extends Authenticatable
     /**
      * Build a one-to-many relationship from User to Post.
      *
-     * @return Relation.
+     * @return HasMany<Post>.
      */
-    public function posts(): Relation
+    public function posts(): HasMany
     {
         return $this->hasMany(Post::class);
     }
