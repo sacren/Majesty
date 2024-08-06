@@ -49,4 +49,18 @@ class Job extends Model
     {
         return $this->belongsToMany(Tag::class, foreignPivotKey: 'job_listing_id');
     }
+
+    /**
+     * List the tag associated with the job or create it if it doesn't exist.
+     *
+     * @return void.
+     */
+    public function hasTag(string $tagName): void
+    {
+        $tag = Tag::firstOrCreate([
+            'name' => $tagName,
+        ]);
+
+        $this->tags()->attach($tag->id);
+    }
 }
