@@ -5,7 +5,7 @@
   </div>
 
   <div>
-    <p>The current time is {{ time }}</p>
+    <p>The current time is {{ $page.props.time[0] }}</p>
 
     <Link href="/spa" class="text-blue-500 hover:underline">
     Update Time
@@ -22,11 +22,6 @@
     components: {
       Layout,
       Link,
-    },
-    computed: {
-      time() {
-        return this.$page.props.time[0];
-      },
     },
   };
 </script>
