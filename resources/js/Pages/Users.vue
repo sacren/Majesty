@@ -1,5 +1,4 @@
 <template>
-  <Layout>
   <div class="text-3xl">
     <h1>Users</h1>
   </div>
@@ -11,15 +10,12 @@
     Update Time
     </Link>
   </div>
-  </Layout>
 </template>
 
 <script>
   import Layout from '../Shared/Layout.vue';
 
   export default {
-    components: {
-      Layout,
-    },
+    layout: Layout,
   };
 </script>
