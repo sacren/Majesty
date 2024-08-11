@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <title>Home</title>
+  </Head>
+
   <div class="text-3xl">
     <h1>Home</h1>
   </div>
@@ -12,5 +16,6 @@
   </div>
 </template>
 
-<script>
+<script setup>
+  import { Head } from '@inertiajs/vue3';
 </script>
