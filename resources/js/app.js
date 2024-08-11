@@ -14,7 +14,7 @@ createInertiaApp({
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
 
         Object.values(pages).forEach((page) => {
-            page.default.layout = page.default.layout || Layout;
+            page.default.layout ??= Layout;
         });
 
         return pages[`./Pages/${name}.vue`];
