@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <title>SPA</title>
+  </Head>
+
   <section class="p-6 bg-gray-200">
     <header class="flex justify-between">
       <h1 class="text-3xl font-bold">SPA</h1>
@@ -16,10 +20,12 @@
 
 <script>
   import Nav from './Nav.vue';
+  import { Head } from '@inertiajs/vue3';
 
   export default {
     components: {
       Nav,
+      Head,
     },
   };
 </script>
