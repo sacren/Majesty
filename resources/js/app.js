@@ -4,12 +4,6 @@ import { createInertiaApp, Link } from '@inertiajs/vue3';
 import Layout from './Shared/Layout.vue';
 
 createInertiaApp({
-    progress: {
-        delay: 250,
-        color: 'red',
-        includeCSS: true,
-        showSpinner: true,
-    },
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true });
 
@@ -19,10 +13,20 @@ createInertiaApp({
 
         return pages[`./Pages/${name}.vue`];
     },
+
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .component('Link', Link)
             .mount(el);
     },
+
+    progress: {
+        delay: 250,
+        color: 'red',
+        includeCSS: true,
+        showSpinner: true,
+    },
+
+    title: title => `SPA - ${title}`,
 });
