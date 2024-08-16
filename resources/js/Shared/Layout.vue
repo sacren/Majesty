@@ -20,12 +20,10 @@
 
 <script>
   import Nav from './Nav.vue';
-  import { Head } from '@inertiajs/vue3';
 
   export default {
     components: {
       Nav,
-      Head,
     },
   };
 </script>
