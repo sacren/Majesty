@@ -1,6 +1,7 @@
 <template>
   <Head>
     <title>SPA</title>
+    <meta type="description" content="SPA" head-key="description">
   </Head>
 
   <section class="p-6 bg-gray-200">
