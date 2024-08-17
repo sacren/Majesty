@@ -1,6 +1,7 @@
 <template>
   <Head>
     <title>Home</title>
+    <meta type="description" content="Home" head-key="description">
   </Head>
 
   <div class="text-3xl">
