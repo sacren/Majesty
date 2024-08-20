@@ -29,5 +29,5 @@ createInertiaApp({
         showSpinner: true,
     },
 
-    title: title => `SPA - ${title}`,
+    title: (title) => `SPA - ${title}`,
 });
