@@ -6,6 +6,7 @@ use App\Http\Controllers\SessionController;
 use App\Jobs\TranslateJob;
 use App\Mail\JobPosted;
 use App\Models\Job;
+use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,7 +16,9 @@ Route::get('/spa', function () {
     return Inertia::render('Home');
 });
 Route::get('/spa/users', function () {
-    return Inertia::render('Users');
+    return Inertia::render('Users', [
+        'users' => User::all(),
+    ]);
 });
 Route::get('/spa/settings', function () {
     return Inertia::render('Settings');
