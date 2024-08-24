@@ -18,7 +18,7 @@ Route::get('/spa', function () {
 Route::get('/spa/users', function () {
     return Inertia::render('Users', [
         'users' => User::all()
-            ->map->only(['first_name', 'last_name']),
+            ->map->only(['id', 'first_name', 'last_name']),
     ]);
 });
 Route::get('/spa/settings', function () {
