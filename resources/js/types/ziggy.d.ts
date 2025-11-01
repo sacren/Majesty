@@ -1,8 +1,4 @@
-import { route } from 'ziggy-js';
-
-declare global {
-    let route: typeof route;
-}
+import type { route } from 'ziggy-js';
 
 declare module 'vue' {
     interface ComponentCustomProperties {
